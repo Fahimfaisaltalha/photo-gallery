@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
        
     }
 
-    $target_dir =  'assets/images/';
+    $target_dir ='assets/images/';
     if(!file_exists($target_dir)){
         mkdir($target_dir, 0777, true);
     }
