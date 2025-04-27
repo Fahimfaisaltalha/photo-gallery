@@ -25,7 +25,7 @@ include 'includes/config.php';
                     </li>
                     
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Upload Image</a>
+                        <a class="nav-link active" aria-current="page" href="upload.php">Upload Image</a>
                     </li>
                     
                 </ul>

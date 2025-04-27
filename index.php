@@ -11,31 +11,29 @@ $images=$stmt->fetchAll();
 <div class="row">
 <?php
 if(count($images) > 0){
+    foreach($images as $image){ 
     ?>
-
-    <?php foreach($images as $image){ 
-        ?>
-        <div class="card" style="width: 18rem;">
-        <img src="assets/images/<?php echo $image['filename']; ?>" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title"><?php echo $image['title'] ?></h5>
-            <p class="card-text"><?php echo date('M-D-Y', strtotime($image['upload_date'])); ?></p>
-            
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img src="assets/images/<?php echo $image['filename']; ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo $image['title'] ?></h5>
+                    <p class="card-text"><?php echo $image['description'] ?></p>
+                    <p class="card-text"><small class="text-muted">
+                        <?php echo date('M-d-Y', strtotime($image['upload_date'])); ?>
+                    </small></p>
+                </div>
+            </div>
         </div>
-    </div>
-<?php
+    <?php
     }
-}else{
+} else {
     ?>
     <div class="alert alert-info" role="alert">
         No images found.
     </div>
 <?php }?>
-
 </div>
-
-
-
 
 <?php
 include 'includes/footer.php';
